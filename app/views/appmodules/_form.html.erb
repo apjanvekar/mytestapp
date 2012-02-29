@@ -1,0 +1,21 @@
+<%= form_for(@appmodule) do |f| %>
+  <% if @appmodule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@appmodule.errors.count, "error") %> prohibited this appmodule from being saved:</h2>
+
+      <ul>
+      <% @appmodule.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :module_name %><br />
+    <%= f.text_field :module_name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
